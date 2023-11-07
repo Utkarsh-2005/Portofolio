@@ -6,6 +6,7 @@ html {
    margin: 0px;
    height: 100%;
    width: 100%;
+   background-color: black;
 }
 
 body {
@@ -15,3 +16,21 @@ body {
    overflow-x: hidden;
 }
 
+
+.navbar.scrolled{
+   background-color:rgb(9,9,9, 0.5);
+}
+.navbar.illumminate{
+   background: linear-gradient(to right, #31117b, rgb(17, 105, 87));
+   transition: 1s;
+}
+.fade-in {
+   opacity: 0;
+   transform: translateY(20px);
+   transition: opacity 0.5s ease, transform 0.5s ease;
+ }
+ 
+ .fade-in.active {
+   opacity: 1;
+   transform: translateY(0);
+ }

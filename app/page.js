@@ -7,26 +7,48 @@ import Head from "next/head";
 import "./globals.css"
 import Link from "next/link";
 import * as React from "react"
-import { Moon, Sun } from "lucide-react"
-import { useTheme } from "next-themes"
- 
-import { Button } from "@/components/ui/button"
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+import Card from "./components/Card"
 
 export default function Home() {
   const [vantaEffect, setVantaEffect] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [illumminate, setIlluminate] = useState(false);
   const vantaRef = useRef(null);
+  useEffect(() => {
+    function handleScroll() {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 0) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    function handleScroll() {
+      const scrollPosition = window.scrollY;
+      if (scrollPosition > 400) {
+        setIlluminate(true);
+        setIsScrolled(false);
+      } else {
+        setIlluminate(false);
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   useEffect(() => {
     if (!vantaEffect) {
       setVantaEffect(
         FOG({
           el: vantaRef.current,
-          THREE,
+          THREE: THREE,
           highlightColor:0xbedff9,
           midtoneColor:0x8ae5b2,
           lowlightColor: 0x7cd5f7,
@@ -34,55 +56,40 @@ export default function Home() {
           blurFactor: 0.6,
           zoom:1,
           speed:1,
-          minHeight: 500,
+          minHeight: 2000,
           minWidth: 500,
         })
       );
     }
     return () => {
-      if (vantaEffect) vantaEffect.destroy();
+      if (vantaEffect) 
+      {
+        vantaEffect.destroy();}
     };
   }, [vantaEffect]);
   return (
-    <div className="overflow-clip flex-column">
-          <DropdownMenu>
-    <DropdownMenuTrigger asChild>
-      <Button variant="outline" size="icon">
-        <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-        <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-        <span className="sr-only">Toggle theme</span>
-      </Button>
-    </DropdownMenuTrigger>
-    <DropdownMenuContent align="end">
-      <DropdownMenuItem onClick={() => setTheme("light")}>
-        Light
-      </DropdownMenuItem>
-      <DropdownMenuItem onClick={() => setTheme("dark")}>
-        Dark
-      </DropdownMenuItem>
-      <DropdownMenuItem onClick={() => setTheme("system")}>
-        System
-      </DropdownMenuItem>
-    </DropdownMenuContent>
-  </DropdownMenu>
-      <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Your Page Title</title>
-      </Head>
-      <div className="">
-        <main className="z-[-1]" ref={vantaRef}></main>
+    <> 
+    <div className="overflow-clip flex-column" ref={vantaRef}>
+        {/* <div className="z-[-1]" ref={vantaRef}></div> */}
+      <div className={`z-[2] backdrop-blur-md flex flex-row top-0 text-white p-5 bg-black bg-opacity-10 bg-blur-50 sticky navbar ${illumminate ? 'illumminate' : ''} ${isScrolled ? 'scrolled' : ''}`}>
+        <button className="mr-auto bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">Resume</button>
+        <p className="ml-auto md:mr-3 p-1">About me</p>
+        <p className="ml-3 md:ml-10 p-1 hidden sm:block">Contact</p>
       </div>
- 
-
   <div className="flex top-0 min-h-[400px] w-screen justify-center items-center flex-row">
   <div className="flex justify-center items-center w-max">
     <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 font-bold text-4xl text-white sm:text-5xl">This is Utkarsh.</h1>
   </div>
 </div>
-<div class="relative">
-  <div class="absolute top-[-80px] w-full h-20 bg-gradient-to-b from-transparent to-white"></div>
-  <p className="text-2xl m-10">i gg gg ggg ggg g gggsa b.tech fbfb ffg dgdf dfdf dfdf</p>
+<div class="relative bg-black">
+  <div class="absolute top-[-80px] w-full h-20 bg-gradient-to-b from-transparent to-black"></div>
 </div>
+    <div className="p-40 bg-black flex justify-center items-center h-500">
+      <section className="grid text-white place-items-center align-content-center space-y-20">
+            <Card img="/profile.jpg" data="I am Second Year B.Tech Student in KIIT University. I am passionate about Web Development"/>
+            <Card data="vbggg hhv hhh "/>
+      </section>
     </div>
-  );
-}
+    </div>
+    </>
+)}
