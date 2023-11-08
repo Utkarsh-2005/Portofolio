@@ -8,6 +8,15 @@ import "./globals.css"
 import Link from "next/link";
 import * as React from "react"
 import Card from "./components/Card"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+
+// import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
+
 
 export default function Home() {
   const [vantaEffect, setVantaEffect] = useState(0);
@@ -85,10 +94,12 @@ export default function Home() {
   <div class="absolute top-[-80px] w-full h-20 bg-gradient-to-b from-transparent to-black"></div>
 </div>
     <div className="p-40 bg-black flex justify-center items-center h-500">
-      <section className="grid text-white place-items-center align-content-center space-y-20">
-            <Card img="/profile.jpg" data="I am Second Year B.Tech Student in KIIT University. I am passionate about Web Development"/>
-            <Card data="vbggg hhv hhh "/>
+      <section className="grid text-white place-items-center align-content-center space-y-40">
+            <Card img="/profile.jpg" data="I am Second Year B.Tech Student in KIIT University. I am passionate about Web Development." title="About me"/>
+            <Card title="Skills" data="HTML, CSS, JS, ReactJS, NextJS, MongoDB, Flask, Tailwind CSS, Bootstrap, MySQL."/>
       </section>
+ 
+  
     </div>
     </div>
     </>

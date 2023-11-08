@@ -23,17 +23,21 @@ const Card = (props) => {
     }, []);
 
     return (
-        <div ref={elementRef} className="bg-red border border-white h-[auto] sm:w-[auto] w-auto flex rounded-md fade-in z-5 bg-gradient-to-t from-black to-gray-900 flex-col justify-center items-center">
-          <div>
+      <>
+        <div ref={elementRef} className={`bg-red border border-white h-[auto] w-auto flex ${props.img?'sm:flex-row':'flex-col'} flex-col rounded-md fade-in z-5 bg-gradient-to-t from-black to-gray-900 justify-center items-center`}>
+          <div className={`bg-slate-800 m-0.5 ${props.img?"":"w-full"
+        }`}>
+          <h2 className="text-center text-4xl">{props.title}</h2>
         {props.img?    <img
-              src={props.img} className="w-[50vh] p-2"
+              src={props.img} className="w-[50vh] p-2 pt-0"
               />:""}</div>
         {props.img? <div className="sm:w-[50vh] w-auto">
             <p className="p-5 m-5">{props.data}</p>
-        </div>:<div className="sm:w-[50vh] w-auto h-[50vh]">
+        </div>:<div className="sm:w-[50vh] w-auto h-[50vh] flex justify-center items-center">
             <p className="p-5 m-5">{props.data}</p>
         </div>}
         </div>
+        </>
     )
 }
 
