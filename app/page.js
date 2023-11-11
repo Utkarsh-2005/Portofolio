@@ -125,16 +125,16 @@ export default function Home() {
       <div class="wave" id="wave4"></div>
     </div>
     <ul class="social-icon">
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
+      {/* <li class="social-icon__item"><a class="social-icon__link" href="#">
           <ion-icon name="logo-facebook"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
+        </a></li> */}
+      {/* <li class="social-icon__item"><a class="social-icon__link" href="#">
           <ion-icon name="logo-twitter"></ion-icon>
-        </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
+        </a></li> */}
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/utkarsh-jha-002b23266/">
           <ion-icon name="logo-linkedin"></ion-icon>
         </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="#">
+      <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/utkarsh.905/">
           <ion-icon name="logo-instagram"></ion-icon>
         </a></li>
     </ul>
