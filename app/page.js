@@ -6,19 +6,21 @@ import { Fullscreen } from "lucide-react";
 import Head from "next/head";
 import "./globals.css"
 import Link from "next/link";
-import * as React from "react"
-import Card from "./components/Card"
+import * as React from "react";
+import Card from "./components/Card";
+import ShowCase from "./components/ShowCase"
+import { Pagination, Navigation } from 'swiper/modules';
+import SwiperCore from 'swiper/core'
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
-
-// import Swiper styles
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import 'swiper/css/navigation';
+
 
 
 export default function Home() {
+  SwiperCore.use([Pagination, Navigation]);
+
   const [vantaEffect, setVantaEffect] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const [illumminate, setIlluminate] = useState(false);
@@ -93,13 +95,61 @@ export default function Home() {
 <div class="relative bg-black">
   <div class="absolute top-[-80px] w-full h-20 bg-gradient-to-b from-transparent to-black"></div>
 </div>
-    <div className="p-40 bg-black flex justify-center items-center h-500">
+    <div className="bg-black flex justify-center items-center h-500 flex-col p-40">
       <section className="grid text-white place-items-center align-content-center space-y-40">
             <Card img="/profile.jpg" data="I am Second Year B.Tech Student in KIIT University. I am passionate about Web Development." title="About me"/>
             <Card title="Skills" data="HTML, CSS, JS, ReactJS, NextJS, MongoDB, Flask, Tailwind CSS, Bootstrap, MySQL."/>
-      </section>
- 
-  
+            <div className="w-screen lg:p-[35vh] overflow-hidden">
+            <h1 className="text-white text-4xl mb-[-30vh] text-center">Projects</h1>
+      <Swiper
+      slidesPerView={1}
+      loop
+      navigation={true}>
+      <SwiperSlide>
+      <ShowCase link="https://portofolio-sigma-liart.vercel.app/" repo="https://github.com/Utkarsh-2005/Portofolio" img="/portofolio.png" data="This is my portfolio site created using NextJS, TailwindCSS and TypeScript. It is fully responsive and implements external libraries like Three.JS, Vanta.JS and Swiper.JS. "/>
+      </SwiperSlide>
+      <SwiperSlide>
+      <ShowCase link="https://utkarshflix.netlify.app/" repo="https://github.com/Utkarsh-2005/Utkarsh-flix" img="/utkarshflix.png" data="This is a clone of the Netflix landing page created with ReactJS and an API from RapidAPI and implements concepts like filtering and API calls."/>
+      </SwiperSlide>
+    </Swiper>
+    </div>
+    </section>
+    
+    </div>
+    <div>
+    <footer class="footer">
+    <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+    </div>
+    <ul class="social-icon">
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-facebook"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-twitter"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-linkedin"></ion-icon>
+        </a></li>
+      <li class="social-icon__item"><a class="social-icon__link" href="#">
+          <ion-icon name="logo-instagram"></ion-icon>
+        </a></li>
+    </ul>
+    <ul class="menu">
+      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+
+    </ul>
+    <p>&copy;2023 Utkarsh Jha | All Rights Reserved</p>
+  </footer>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     </div>
     </div>
     </>

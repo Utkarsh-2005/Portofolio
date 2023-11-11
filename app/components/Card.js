@@ -1,7 +1,6 @@
 import React from "react";
 import "app/globals.css";
 import { useRef, useEffect } from 'react';
-import Image from "next/image";
 
 const Card = (props) => {
   console.log(props.img)
@@ -24,7 +23,7 @@ const Card = (props) => {
 
     return (
       <>
-        <div ref={elementRef} className={`bg-red border border-white h-[auto] w-auto flex ${props.img?'sm:flex-row':'flex-col'} flex-col rounded-md fade-in z-5 bg-gradient-to-t from-black to-gray-900 justify-center items-center`}>
+        <div ref={elementRef} className={`border border-white h-[auto] flex ${props.img?'sm:flex-row':'flex-col'} flex-col rounded-md fade-in z-5 bg-gradient-to-t from-black to-gray-900 justify-center items-center w-[auto] sm:w-auto m-20`}>
           <div className={`bg-slate-800 m-0.5 ${props.img?"":"w-full"
         }`}>
           <h2 className="text-center text-4xl">{props.title}</h2>
