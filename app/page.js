@@ -9,7 +9,7 @@ import Link from "next/link";
 import * as React from "react";
 import Card from "./components/Card";
 import ShowCase from "./components/ShowCase"
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import SwiperCore from 'swiper/core'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -19,7 +19,7 @@ import 'swiper/css/navigation';
 
 
 export default function Home() {
-  SwiperCore.use([Pagination, Navigation]);
+  SwiperCore.use([Pagination, Navigation, Autoplay]);
 
   const [vantaEffect, setVantaEffect] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -105,7 +105,8 @@ export default function Home() {
       slidesPerView={1}
       loop
       navigation={true}
-      pagination={{ clickable: true }}>
+      pagination={{ clickable: true }}
+      autoplay={{ delay: 3000 }} >
       <SwiperSlide>
       <ShowCase link="https://portofolio-sigma-liart.vercel.app/" repo="https://github.com/Utkarsh-2005/Portofolio" img="/portofolio.png" data="This is my portfolio site created using NextJS, TailwindCSS and TypeScript. It is fully responsive and implements external libraries like Three.JS, Vanta.JS and Swiper.JS. "/>
       </SwiperSlide>
