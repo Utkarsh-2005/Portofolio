@@ -83,7 +83,7 @@ export default function Home() {
     <div className="overflow-clip flex-column" ref={vantaRef}>
         {/* <div className="z-[-1]" ref={vantaRef}></div> */}
       <div className={`z-[2] backdrop-blur-md flex flex-row top-0 text-white p-5 bg-black bg-opacity-10 bg-blur-50 sticky navbar ${illumminate ? 'illumminate' : ''} ${isScrolled ? 'scrolled' : ''}`}>
-        <button className="mr-auto bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded">Resume</button>
+        <a className="mr-auto bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded" href="https://drive.google.com/file/d/1FYzfQFmmIyvfwSJa2T--Z9kUz6ZejAfG/view?usp=sharing">Resume</a>
         <p className="ml-auto md:mr-3 p-1">About me</p>
         <p className="ml-3 md:ml-10 p-1 hidden sm:block">Contact</p>
       </div>
@@ -98,7 +98,7 @@ export default function Home() {
     <div className="bg-black flex justify-center items-center h-500 flex-col p-40">
       <section className="grid text-white place-items-center align-content-center space-y-40">
             <Card img="/profile.jpg" data="I am Second Year B.Tech Student in KIIT University. I am passionate about Web Development." title="About me"/>
-            <Card title="Skills" data="HTML, CSS, JS, ReactJS, NextJS, MongoDB, Flask, Tailwind CSS, Bootstrap, MySQL."/>
+            <Card title="Skills" data="HTML, CSS, JS, ReactJS, NextJS, MongoDB, Flask, Tailwind CSS, Bootstrap, MySQL, Python, C/C++, Java"/>
             <div className="w-screen lg:p-[35vh] overflow-hidden">
             <h1 className="text-white text-4xl mb-[-30vh] text-center">Projects</h1>
       <Swiper
@@ -128,9 +128,9 @@ export default function Home() {
       {/* <li class="social-icon__item"><a class="social-icon__link" href="#">
           <ion-icon name="logo-facebook"></ion-icon>
         </a></li> */}
-      {/* <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-twitter"></ion-icon>
-        </a></li> */}
+      <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/Utkarsh-2005">
+          <img src="/github.png" className="h-[28px] mb-[2px]"></img>
+        </a></li>
       <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/utkarsh-jha-002b23266/">
           <ion-icon name="logo-linkedin"></ion-icon>
         </a></li>
@@ -141,8 +141,7 @@ export default function Home() {
     <ul class="menu">
       <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
       <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Services</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Team</a></li>
+      <li class="menu__item"><a class="menu__link" href="#">Skills</a></li>
       <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
 
     </ul>
