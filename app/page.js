@@ -104,7 +104,8 @@ export default function Home() {
       <Swiper
       slidesPerView={1}
       loop
-      navigation={true}>
+      navigation={true}
+      pagination={{ clickable: true }}>
       <SwiperSlide>
       <ShowCase link="https://portofolio-sigma-liart.vercel.app/" repo="https://github.com/Utkarsh-2005/Portofolio" img="/portofolio.png" data="This is my portfolio site created using NextJS, TailwindCSS and TypeScript. It is fully responsive and implements external libraries like Three.JS, Vanta.JS and Swiper.JS. "/>
       </SwiperSlide>
