@@ -13,8 +13,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import Head from 'next/head';
-
+import Head from "next/head";
 
 
 
@@ -85,12 +84,12 @@ export default function Home() {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
     <div className="overflow-clip flex-column" ref={vantaRef}>
-
       <div className={`z-[2] backdrop-blur-md flex flex-row top-0 text-white p-5 bg-black bg-opacity-10 bg-blur-50 sticky navbar ${illumminate ? 'illumminate' : ''} ${isScrolled ? 'scrolled' : ''}`}>
         <a className="mr-auto bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded" href="https://drive.google.com/file/d/1FYzfQFmmIyvfwSJa2T--Z9kUz6ZejAfG/view?usp=sharing">Resume</a>
+        <Link href="#about">
         <p className="ml-auto md:mr-3 p-1">About me</p>
+        </Link>
         <p className="ml-3 md:ml-10 p-1 hidden sm:block">Contact</p>
       </div>
   <div className="flex top-0 min-h-[400px] w-screen justify-center items-center flex-row">
@@ -103,8 +102,12 @@ export default function Home() {
 </div>
     <div className="bg-black flex justify-center items-center h-500 flex-col p-40">
       <section className="grid text-white place-items-center align-content-center space-y-40">
+            <div id="about">
             <Card img="/profile.jpg" data="I am Second Year B.Tech Student in KIIT University. I am passionate about Web Development." title="About me"/>
+            </div>
+            <div id="skills">
             <Card title="Skills" data="HTML, CSS, JS, ReactJS, NextJS, MongoDB, Flask, Tailwind CSS, Bootstrap, MySQL, Python, C/C++, Java"/>
+            </div>
             <div className="w-screen lg:p-[35vh] overflow-hidden">
             <h1 className="text-white text-4xl mb-[-30vh] text-center">Projects</h1>
       <Swiper
@@ -145,15 +148,13 @@ export default function Home() {
     </ul>
     <ul className="menu">
       <li className="menu__item"><a className="menu__link" href="#">Home</a></li>
-      <li className="menu__item"><a className="menu__link" href="#">About</a></li>
-      <li className="menu__item"><a className="menu__link" href="#">Skills</a></li>
+      <li className="menu__item"><a className="menu__link" href="#about">About</a></li>
+      <li className="menu__item"><a className="menu__link" href="#skills">Skills</a></li>
       <li className="menu__item"><a className="menu__link" href="#">Contact</a></li>
-
     </ul>
     <p>&copy;2023 Utkarsh Jha | All Rights Reserved</p>
   </footer>
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@^7.2.2/dist/ionicons/ionicons.esm.js"></script>
     </div>
     </div>
     </>
