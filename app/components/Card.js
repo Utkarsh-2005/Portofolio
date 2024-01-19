@@ -3,7 +3,6 @@ import "app/globals.css";
 import { useRef, useEffect } from 'react';
 
 const Card = (props) => {
-  console.log(props.img)
     const elementRef = useRef();
 
     useEffect(() => {

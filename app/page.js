@@ -2,8 +2,6 @@
 import { useState, useRef, useEffect } from "react"
 import FOG from "vanta/dist/vanta.fog.min"
 import * as THREE from "three"
-import { Fullscreen } from "lucide-react";
-import Head from "next/head";
 import "./globals.css"
 import Link from "next/link";
 import * as React from "react";
@@ -15,10 +13,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+import Head from 'next/head';
+
 
 
 
 export default function Home() {
+
   SwiperCore.use([Pagination, Navigation, Autoplay]);
 
   const [vantaEffect, setVantaEffect] = useState(0);
@@ -78,10 +79,15 @@ export default function Home() {
         vantaEffect.destroy();}
     };
   }, [vantaEffect]);
+
   return (
-    <> 
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
     <div className="overflow-clip flex-column" ref={vantaRef}>
-        {/* <div className="z-[-1]" ref={vantaRef}></div> */}
+
       <div className={`z-[2] backdrop-blur-md flex flex-row top-0 text-white p-5 bg-black bg-opacity-10 bg-blur-50 sticky navbar ${illumminate ? 'illumminate' : ''} ${isScrolled ? 'scrolled' : ''}`}>
         <a className="mr-auto bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded" href="https://drive.google.com/file/d/1FYzfQFmmIyvfwSJa2T--Z9kUz6ZejAfG/view?usp=sharing">Resume</a>
         <p className="ml-auto md:mr-3 p-1">About me</p>
@@ -92,8 +98,8 @@ export default function Home() {
     <h1 className="animate-typing overflow-hidden whitespace-nowrap border-r-4 border-r-white pr-5 font-bold text-4xl text-white sm:text-5xl">This is Utkarsh.</h1>
   </div>
 </div>
-<div class="relative bg-black">
-  <div class="absolute top-[-80px] w-full h-20 bg-gradient-to-b from-transparent to-black"></div>
+<div className="relative bg-black">
+  <div className="absolute top-[-80px] w-full h-20 bg-gradient-to-b from-transparent to-black"></div>
 </div>
     <div className="bg-black flex justify-center items-center h-500 flex-col p-40">
       <section className="grid text-white place-items-center align-content-center space-y-40">
@@ -119,32 +125,29 @@ export default function Home() {
     
     </div>
     <div>
-    <footer class="footer">
-    <div class="waves">
-      <div class="wave" id="wave1"></div>
-      <div class="wave" id="wave2"></div>
-      <div class="wave" id="wave3"></div>
-      <div class="wave" id="wave4"></div>
+    <footer className="footer">
+    <div className="waves">
+      <div className="wave" id="wave1"></div>
+      <div className="wave" id="wave2"></div>
+      <div className="wave" id="wave3"></div>
+      <div className="wave" id="wave4"></div>
     </div>
-    <ul class="social-icon">
-      {/* <li class="social-icon__item"><a class="social-icon__link" href="#">
-          <ion-icon name="logo-facebook"></ion-icon>
-        </a></li> */}
-      <li class="social-icon__item"><a class="social-icon__link" href="https://github.com/Utkarsh-2005">
+    <ul className="social-icon">
+      <li className="social-icon__item"><a className="social-icon__link" href="https://github.com/Utkarsh-2005">
           <img src="/github.png" className="h-[28px] mb-[2px]"></img>
         </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/in/utkarsh-jha-002b23266/">
+      <li className="social-icon__item"><a className="social-icon__link" href="https://www.linkedin.com/in/utkarsh-jha-002b23266/">
           <ion-icon name="logo-linkedin"></ion-icon>
         </a></li>
-      <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/utkarsh.905/">
+      <li className="social-icon__item"><a className="social-icon__link" href="https://www.instagram.com/utkarsh.905/">
           <ion-icon name="logo-instagram"></ion-icon>
         </a></li>
     </ul>
-    <ul class="menu">
-      <li class="menu__item"><a class="menu__link" href="#">Home</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">About</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Skills</a></li>
-      <li class="menu__item"><a class="menu__link" href="#">Contact</a></li>
+    <ul className="menu">
+      <li className="menu__item"><a className="menu__link" href="#">Home</a></li>
+      <li className="menu__item"><a className="menu__link" href="#">About</a></li>
+      <li className="menu__item"><a className="menu__link" href="#">Skills</a></li>
+      <li className="menu__item"><a className="menu__link" href="#">Contact</a></li>
 
     </ul>
     <p>&copy;2023 Utkarsh Jha | All Rights Reserved</p>
