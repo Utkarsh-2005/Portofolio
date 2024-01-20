@@ -93,9 +93,9 @@ export default function Home() {
       <div className={`z-[2] backdrop-blur-md flex flex-row top-0 text-white p-5 bg-black bg-opacity-10 bg-blur-50 sticky navbar ${illumminate ? 'illumminate' : ''} ${isScrolled ? 'scrolled' : ''}`}>
         <a className="mr-auto bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded" href="https://drive.google.com/file/d/1mtglZgTydSmnOU3z4PIcxf2qOjBHFFEa/view">Resume</a>
         <Link href="#about">
-        <p className="ml-auto md:mr-3 p-1">About me</p>
+        <p className="ml-auto md:mr-3 p-1 hidden sm:block">About me</p>
         </Link>
-        <p className="ml-3 md:ml-10 p-1 hidden sm:block cursor-pointer" onClick={() => setShowModal(true)}>Contact</p>
+        <p className="ml-3 md:ml-10 p-1 cursor-pointer" onClick={() => setShowModal(true)}>Contact</p>
       </div>
   <div className="flex top-0 min-h-[400px] w-screen justify-center items-center flex-row">
   <div className="flex justify-center items-center w-max">

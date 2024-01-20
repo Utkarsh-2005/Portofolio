@@ -15,7 +15,7 @@ const BookModal = ({onClose}) => {
            </h2>
             </div>
       <div>
-      <form action="" method="post" id="submit-contact-form" className=''>
+      <form id="submit-contact-form" className=''>
                 <div class="p-2 w-full">
                     <div class="relative">
                         <label for="name" class="leading-7 py-4 text-lg text-white text-center">Your Name</label>
