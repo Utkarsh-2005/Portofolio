@@ -118,7 +118,7 @@ export default function Home() {
             <Card title="Databases" data="MongoDB, Firebase"/>
             </div>
             <div className="w-screen sm:p-[50vh] overflow-hidden">
-            <h1 className="text-white text-4xl sm:mb-[-30vh] mb-[-20vh] text-center">Projects</h1>
+            <h1 className="text-white text-4xl sm:mb-[-30vh] mb-[-20vh] text-center mt-20 sm:mt-0">Projects</h1>
       <Swiper
       slidesPerView={1}
       loop
