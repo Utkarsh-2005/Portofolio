@@ -108,15 +108,17 @@ export default function Home() {
   <div className="absolute top-[-80px] w-full h-20 bg-gradient-to-b from-transparent to-black"></div>
 </div>
     <div className="bg-black flex justify-center items-center h-500 flex-col p-40">
-      <section className="grid text-white place-items-center align-content-center space-y-40">
+      <section className="grid text-white place-items-center align-content-center space-y-35">
             <div id="about">
             <Card img="/profile.jpg" data="I am Second Year B.Tech Student in KIIT University. I am passionate about Web Development." title="About me"/>
             </div>
-            <div id="skills">
-            <Card title="Skills" data="HTML, CSS, JS, ReactJS, NextJS, MongoDB, Flask, Tailwind CSS, Bootstrap, MySQL, Python, C/C++, Java"/>
+            <div id="skills" className="space-y-20">
+            <Card title="Frontend Skills" data="React.js, Next.js, Tailwind, Bootsrap, Material Ui"/>
+            <Card title="Backend Skills" data="ExpressJS, NodeJS, Flask"/>
+            <Card title="Databases" data="MongoDB, Firebase"/>
             </div>
-            <div className="w-screen lg:p-[35vh] overflow-hidden">
-            <h1 className="text-white text-4xl mb-[-30vh] text-center">Projects</h1>
+            <div className="w-screen sm:p-[50vh] overflow-hidden">
+            <h1 className="text-white text-4xl sm:mb-[-30vh] mb-[-20vh] text-center">Projects</h1>
       <Swiper
       slidesPerView={1}
       loop
@@ -128,6 +130,9 @@ export default function Home() {
       </SwiperSlide>
       <SwiperSlide>
       <ShowCase link="https://utkarshflix.netlify.app/" repo="https://github.com/Utkarsh-2005/Utkarsh-flix" img="/utkarshflix.png" data="This is a clone of the Netflix landing page created with ReactJS and an API from RapidAPI and implements concepts like filtering and API calls."/>
+      </SwiperSlide>
+      <SwiperSlide>
+      <ShowCase link="https://book-store-frontend-kappa.vercel.app/" repo="https://github.com/Utkarsh-2005/BookStore_Frontend" img="/bookstore.png" data="This the MERN stack web-app that I created with a follow along project. This app has CRUD operations available."/>
       </SwiperSlide>
     </Swiper>
     </div>

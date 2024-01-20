@@ -9,6 +9,7 @@ html {
    width: 100%;
    background-color: black;
    font-family: 'Libre Franklin', sans-serif;
+   scroll-behavior: smooth;
 }
 
 body {

@@ -18,7 +18,7 @@ const ShowCase = (props) => {
 
     return(
         <>
-        <div className="bg-black border border-white h-[auto] w-auto flex flex-col rounded-md m-20 mt-60 overflow-hidden">
+        <div className="bg-black border border-white h-[auto] flex flex-col rounded-md m-20 mt-60 overflow-hidden">
         <div className="relative">
         <div className="flex bottom-0 z-5 absolute p-2 space-x-3 justify-center items-center w-full bg-black bg-opacity-50 backdrop-blur-sm">
             <a href={props.link}>
@@ -28,7 +28,7 @@ const ShowCase = (props) => {
             <img src="/github.png" className="logo h-[30px]"/>
             </a>
         </div>
-        <img src={props.img} className="min-w-[45vh] sm:min-w-[50vh]"/>
+        <img src={props.img} className="w-fit sm:w-fit"/>
         </div> 
         <div>
         <p className="text-white h-auto sm:h-[20vh] flex justify-center items-center p-5 text-sm sm:text-base">{props.data}</p>
