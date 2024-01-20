@@ -95,7 +95,9 @@ export default function Home() {
         <Link href="#about">
         <p className="ml-auto md:mr-3 p-1 hidden sm:block">About me</p>
         </Link>
-        <p className="ml-3 md:ml-10 p-1 cursor-pointer" onClick={() => setShowModal(true)}>Contact</p>
+        <Link href="#contact">
+        <p className="ml-3 md:ml-10 p-1">Contact</p>
+        </Link>
       </div>
   <div className="flex top-0 min-h-[400px] w-screen justify-center items-center flex-row">
   <div className="flex justify-center items-center w-max">
@@ -133,7 +135,7 @@ export default function Home() {
     
     </div>
     <div>
-    <footer className="footer">
+    <footer className="footer" id="contact">
     <div className="waves">
       <div className="wave" id="wave1"></div>
       <div className="wave" id="wave2"></div>
