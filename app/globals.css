@@ -117,7 +117,7 @@ body {
  }
  .wave#wave1 {
    color:#1a2e44;
-   z-index: 1000;
+   z-index: 10;
    opacity: 1;
    bottom: 0;
    animation: animateWaves 4s linear infinite;
@@ -125,7 +125,7 @@ body {
  
  .wave#wave2 {
    color:#1a2e44;
-   z-index: 999;
+   z-index: 9;
    opacity: 0.5;
    bottom: 10px;
    animation: animate 4s linear infinite !important;
@@ -133,7 +133,7 @@ body {
  
  .wave#wave3 {
    color:#1a2e44;
-   z-index: 1000;
+   z-index: 10;
    opacity: 0.2;
    bottom: 15px;
    animation: animateWaves 3s linear infinite;
@@ -141,7 +141,7 @@ body {
  
  .wave#wave4 {
    color:#1a2e44;
-   z-index: 999;
+   z-index: 9;
    opacity: 0.7;
    bottom: 20px;
    animation: animate 3s linear infinite;
