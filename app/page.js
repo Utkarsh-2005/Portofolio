@@ -117,14 +117,14 @@ export default function Home() {
             <Card title="Backend Skills" data="ExpressJS, NodeJS, Flask"/>
             <Card title="Databases" data="MongoDB, Firebase"/>
             </div>
-            <div className="w-screen sm:p-[50vh] overflow-hidden">
-            <h1 className="text-white text-4xl sm:mb-[-30vh] mb-[-20vh] text-center mt-20 sm:mt-0">Projects</h1>
+            <div className="w-screen sm:max-w-screen-md sm:p-[5vh] overflow-hidden sm:mt-20 m-10">
+            <h1 className="text-white text-4xl sm:mb-[-20vh] mb-[-15vh] text-center mt-20 sm:mt-0">Projects</h1>
       <Swiper
       slidesPerView={1}
       loop
       navigation={true}
       pagination={{ clickable: true }}
-      autoplay={{ delay: 3000 }} >
+      autoplay={{ delay: 3000 }}>
       <SwiperSlide>
       <ShowCase link="https://portofolio-sigma-liart.vercel.app/" repo="https://github.com/Utkarsh-2005/Portofolio" img="/portofolio.png" data="This is my portfolio site created using NextJS, TailwindCSS and TypeScript. It is fully responsive and implements external libraries like Three.JS, Vanta.JS and Swiper.JS. "/>
       </SwiperSlide>
