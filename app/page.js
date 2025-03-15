@@ -22,31 +22,16 @@ export default function Home() {
   SwiperCore.use([Pagination, Navigation, Autoplay]);
 
   const [vantaEffect, setVantaEffect] = useState(0);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [illumminate, setIlluminate] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
   const vantaRef = useRef(null);
-  useEffect(() => {
-    function handleScroll() {
-      const scrollPosition = window.scrollY;
-      if (scrollPosition > 0) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     function handleScroll() {
       const scrollPosition = window.scrollY;
       if (scrollPosition > 400) {
         setIlluminate(true);
-        setIsScrolled(false);
       } else {
         setIlluminate(false);
       }
@@ -90,7 +75,7 @@ export default function Home() {
         <BookModal onClose={() => setShowModal(false)} />
       )}
     <div className="overflow-clip flex-column" ref={vantaRef}>
-      <div className={`z-[2] backdrop-blur-md flex flex-row top-0 text-white p-5 bg-black bg-opacity-10 bg-blur-50 sticky navbar ${illumminate ? 'illumminate' : ''} ${isScrolled ? 'scrolled' : ''}`}>
+      <div className={`z-[2] backdrop-blur-md flex flex-row top-0 text-white p-5 bg-black bg-opacity-10 bg-blur-50 sticky navbar ${illumminate ? 'illumminate' : ''} scrolled`}>
         <a className="mr-auto bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 rounded" href="https://drive.google.com/file/d/1WUdeuCX-4wbDKQURBhT31-mwfrcNjy5t/view?usp=sharing" target="_blank" 
   rel="noopener noreferrer">Resume</a>
         <Link href="#about">
@@ -156,10 +141,10 @@ export default function Home() {
           <img src="/github.png" className="h-[28px] mb-[2px]"></img>
         </a></li>
       <li className="social-icon__item"><a className="social-icon__link" href="https://www.linkedin.com/in/utkarsh-jha-002b23266/">
-          <ion-icon name="logo-linkedin"></ion-icon>
+      <img src="/linkedin.png" className="h-[28px] mb-[2px]"></img>
         </a></li>
       <li className="social-icon__item"><a className="social-icon__link" href="https://www.instagram.com/utkarsh.905/">
-          <ion-icon name="logo-instagram"></ion-icon>
+      <img src="/instagram.png" className="h-[28px] mb-[2px]"></img>
         </a></li>
     </ul>
     <ul className="menu">
