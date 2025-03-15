@@ -96,7 +96,7 @@ export default function Home() {
     <div className="bg-black flex justify-center items-center h-500 flex-col p-40">
       <section className="grid text-white place-items-center align-content-center space-y-35">
             <div id="about">
-            <Card img="/profile.jpg" data="I am Second Year B.Tech Student in KIIT University. I am passionate about Web Development." title="About me"/>
+            <Card img="/profile.jpg" data="I am Third Year B.Tech Student in KIIT University. I am a Full Stack Developer. Currently, I am expanding my DevOps skills and interested in AI, UI/UX and Design." title="About me"/>
             </div>
             <div id="skills" className="space-y-20">
             <Card title="Frontend Skills" data="React.js, Next.js, Typescript, Tailwind, Bootsrap, Material Ui"/>
